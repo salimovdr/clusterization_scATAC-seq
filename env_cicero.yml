@@ -1,0 +1,63 @@
+name: clustering_scATACseq
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  # Python
+  - python=3.12
+  - jupyterlab
+  - numpy
+  - pandas
+  - pip
+
+  # Toolchain (чтобы не было ошибки timespec_get)
+  - compilers
+  - sysroot_linux-64=2.17
+  - libstdcxx-ng
+  - libgcc-ng
+
+  # R 4.4 + базовый стек
+  - r-base=4.4
+  - r-essentials
+  - r-irkernel
+  - r-httpuv
+  - r-promises>=1.3.2
+  - r-shiny
+  - r-rcpp
+  - r-matrix
+  - r-igraph
+  - r-dplyr
+  - r-data.table
+  - r-ggplot2
+  - r-cowplot
+
+  # Bioconductor
+  - bioconductor-genomicranges
+  - bioconductor-iranges
+  - bioconductor-gviz
+  - bioconductor-rtracklayer
+  - bioconductor-cicero
+  - bioconductor-summarizedexperiment
+  - bioconductor-singlecellexperiment
+  - bioconductor-biovizbase
+  - bioconductor-bsgenome.hsapiens.ucsc.hg38   # поменяй на hg19 при необходимости
+
+  # Monocle3
+  - r-monocle3
+
+  # Seurat + Signac
+  - r-seurat
+  - r-signac
+
+  # Для scOpen
+  - r-reticulate
+  - r-topicmodels
+
+  # Python deps для scOpen
+  - pip:
+      - scopen
+      - scanpy
+      - scikit-learn
+      - h5py
+
